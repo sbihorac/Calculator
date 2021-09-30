@@ -7,7 +7,7 @@ public class AdvancedCalculator extends Calculator {
     }
 
     @Override
-    public double doOperation() {
+    public double doOperation() throws Exception {
         if (operation.equals("modulus")){
             return a % b;
         }else if (operation.equals("pow")){

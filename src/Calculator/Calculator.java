@@ -21,8 +21,8 @@ public class Calculator {
         return " + - * /";
     }
 
-    public double doOperation() {
-        switch (operation){
+    public double doOperation() throws Exception {
+        switch (operation) {
             case "+":
                 return a + b;
             case "-":
@@ -30,8 +30,13 @@ public class Calculator {
             case "*":
                 return a * b;
             case "/":
-                return a / b;
+                if (b == 0) {
+                    throw new ArithmeticException("Can't divide by 0");
+                } else
+                    return a / b;
         }
-        return 0;
+
+        throw new Exception("Operation not supported " + operation);
     }
+
 }
